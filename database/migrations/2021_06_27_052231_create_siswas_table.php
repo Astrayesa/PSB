@@ -18,6 +18,7 @@ class CreateSiswasTable extends Migration
             $table->string('nama');
             $table->float('nilai');
             $table->string('asal_sekolah');
+            $table->string('status')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
