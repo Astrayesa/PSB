@@ -18,8 +18,8 @@
 
                                 {{--input data petugas--}}
                                 <div class="form-group">
-                                    <label for="usernameInput">Username</label>
-                                    <input name="username" type="text" class="form-control" id="usernameInput"
+                                    <label for="usernameInput">Nama</label>
+                                    <input name="name" type="text" class="form-control" id="usernameInput"
                                            placeholder="Masukan Username" required>
                                 </div>
                                 <div class="form-group">

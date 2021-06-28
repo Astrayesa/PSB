@@ -8,8 +8,7 @@
                 <div class="card-tools">
                     <div class="input-group input-group-sm">
                         <div class="input-group-append">
-                            <a type="submit" class="btn btn-success" href="{{ route('siswa.create') }}">Tambah Calon
-                                Siswa</a>
+                            <a type="submit" class="btn btn-success" href="{{ route('siswa.create') }}">Daftar</a>
                         </div>
                     </div>
                 </div>

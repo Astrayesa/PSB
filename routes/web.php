@@ -15,15 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::redirect('/', '/siswa');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('siswa', SiswaController::class)->middleware('auth');
-Route::resource('user', UserController::class );
+Route::resource('user', UserController::class )->middleware('auth');
 Route::post('/terima/{id}', [SiswaController::class, 'terima'])->name('siswa.terima');
 Route::post('/tolak/{id}', [SiswaController::class, 'tolak'])->name('siswa.tolak');

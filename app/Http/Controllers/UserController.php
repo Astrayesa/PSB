@@ -34,11 +34,15 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+//        dd($data);
+        User::create($data);
+        return redirect()->route('user.index');
     }
 
     /**
@@ -79,10 +83,12 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(User $user)
     {
         //
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }
