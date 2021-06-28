@@ -12,7 +12,11 @@ class Siswa extends Model
 
     protected $fillable = [
         'nama',
-        'nilai',
+        'nilai_bahasa_inggris',
+        'nilai_bahasa_indonesia',
+        'nilai_matematika',
+        'status',
+        'photo',
         'asal_sekolah',
         'user_id'
     ];

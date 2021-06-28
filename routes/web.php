@@ -25,3 +25,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('siswa', SiswaController::class)->middleware('auth');
 Route::resource('user', UserController::class );
+Route::post('/terima/{id}', [SiswaController::class, 'terima'])->name('siswa.terima');
+Route::post('/tolak/{id}', [SiswaController::class, 'tolak'])->name('siswa.tolak');

@@ -16,9 +16,12 @@ class CreateSiswasTable extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->float('nilai');
+            $table->float('nilai_bahasa_inggris');
+            $table->float('nilai_bahasa_indonesia');
+            $table->float('nilai_matematika');
             $table->string('asal_sekolah');
             $table->string('status')->nullable();
+            $table->string('photo')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
