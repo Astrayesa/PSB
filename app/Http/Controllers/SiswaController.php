@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Siswa;
+use PDF;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -99,6 +100,16 @@ class SiswaController extends Controller
         $data = Siswa::find($siswa);
         $data->update(['status' => 'Ditolak']);
         return redirect()->route('siswa.index')->with('success', 'Berhasil menolak calon siswa');
+    }
+
+    public function cetak()
+    {
+        $siswa = Siswa::where('user_id', auth()->user()->id)->first();
+//        dd($siswa);
+//        return view('siswa.cetak', compact('siswa'));
+        $pdf = PDF::loadview('siswa.cetak', compact('siswa'));
+        return $pdf->download();
+        return redirect()->route('siswa.index');
     }
 
     /**

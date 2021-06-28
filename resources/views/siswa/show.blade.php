@@ -32,10 +32,6 @@
                                 <td>Asal Sekolah</td>
                                 <td>{{ $siswa->asal_sekolah }}</td>
                             </tr>
-                            <tr>
-                                <td>Nama</td>
-                                <td>{{ $siswa->nama }}</td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>

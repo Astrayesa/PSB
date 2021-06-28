@@ -27,3 +27,5 @@ Route::resource('siswa', SiswaController::class)->middleware('auth');
 Route::resource('user', UserController::class )->middleware('auth');
 Route::post('/terima/{id}', [SiswaController::class, 'terima'])->name('siswa.terima');
 Route::post('/tolak/{id}', [SiswaController::class, 'tolak'])->name('siswa.tolak');
+Route::get('/cetak', [SiswaController::class, 'cetak'])->name('siswa.cetak');
+

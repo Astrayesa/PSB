@@ -4,12 +4,19 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Daftar Calon Siswa</h3>
+{{--            {{ dd(count($pendaftaran)) }}--}}
             @if(!count($pendaftaran) && !auth()->user()->is_admin)
                 <div class="card-tools">
                     <div class="input-group input-group-sm">
                         <div class="input-group-append">
                             <a type="submit" class="btn btn-success" href="{{ route('siswa.create') }}">Daftar</a>
                         </div>
+                    </div>
+                </div>
+            @elseif(count($pendaftaran) > 0 && !auth()->user()->is_admin)
+                <div class="card-tools">
+                    <div class="input-group input-group-append-sm">
+                        <a class="btn btn-primary" href="{{ route('siswa.cetak') }}">Cetak</a>
                     </div>
                 </div>
             @endif
